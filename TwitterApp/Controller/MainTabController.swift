@@ -8,7 +8,10 @@
 import UIKit
 
 
+
 class MainTabController: UITabBarController {
+  
+  // MARK - Properties
   
   
   let actionButton: UIButton = {
@@ -21,7 +24,7 @@ class MainTabController: UITabBarController {
     return button
   }()
   
-    // MARK: - Lifecycle
+    // MARK - Lifecycle
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +34,13 @@ class MainTabController: UITabBarController {
       
     }
   
-  // MARK: - Selectors
+  // MARK - Selectors
   
   @objc func actionButtonTapped(){
     print(1234)
   }
   
-  // MARK: - Helpers
+  // MARK - Helpers
   
   func configureUI() {
     view.addSubview(actionButton)

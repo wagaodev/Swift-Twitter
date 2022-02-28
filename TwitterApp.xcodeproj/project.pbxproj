@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D227CC3A21008CFA58 /* Extensions.swift */; };
+		D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */; };
+		D7A5B3D827CC82A9008CFA58 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */; };
 		D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8005E27CB2F470001565A /* AppDelegate.swift */; };
 		D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8006027CB2F470001565A /* SceneDelegate.swift */; };
 		D7E8006627CB2F470001565A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E8006427CB2F470001565A /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		D7A5B3D227CC3A21008CFA58 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		D7E8005B27CB2F470001565A /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8005E27CB2F470001565A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E8006027CB2F470001565A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D7A5B3D427CC7F9C008CFA58 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */,
+				D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
 		D7E8005227CB2F470001565A = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 		D7E8007427CB300F0001565A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7A5B3D427CC7F9C008CFA58 /* New Group */,
 				D7E8007927CB38C50001565A /* MainTabController.swift */,
 				D7E8007B27CB3EB20001565A /* FeedController.swift */,
 				D7E8007D27CB40250001565A /* ExploreController.swift */,
@@ -208,6 +222,8 @@
 				D7E8007E27CB40250001565A /* ExploreController.swift in Sources */,
 				D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */,
 				D7E8007A27CB38C50001565A /* MainTabController.swift in Sources */,
+				D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */,
+				D7A5B3D827CC82A9008CFA58 /* RegistrationController.swift in Sources */,
 				D7E8007C27CB3EB20001565A /* FeedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
