@@ -72,11 +72,14 @@ class LoginController: UIViewController {
   // MARK - Selectors
   
   @objc func handleLogin(){
-    print("Handle login here...")
+  
+    print("Lidar com o login")
+    
   }
   
   @objc func handleNavigateToSignUp(){
-    print("Navegação para outra pagina")
+    let controller = RegistrationController()
+    navigationController?.pushViewController(controller, animated: true)
   }
   
   
