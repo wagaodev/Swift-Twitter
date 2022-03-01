@@ -41,6 +41,25 @@ class LoginController: UIViewController {
     return tf
   }()
   
+  private let loginButton: UIButton = {
+    let button = UIButton(type: .system)
+    button.setTitle("Log in", for: .normal)
+    button.setTitleColor(.twitterBlue, for: .normal)
+    button.backgroundColor = .white
+    button.heightAnchor.constraint(lessThanOrEqualToConstant: 50).isActive = true
+    button.layer.cornerRadius = 8
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+    button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+    
+    return button
+  }()
+  
+  private let dontHaveAccountButton: UIButton = {
+    let button = Utilities().atttributedButton("Don't have an account? ", "Sign Up")
+    button.addTarget(self, action: #selector(handleNavigateToSignUp), for: .touchUpInside)
+    return button
+  }()
+  
   
   // MARK - Lifecycle
   
@@ -51,6 +70,14 @@ class LoginController: UIViewController {
   
   
   // MARK - Selectors
+  
+  @objc func handleLogin(){
+    print("Handle login here...")
+  }
+  
+  @objc func handleNavigateToSignUp(){
+    print("Navegação para outra pagina")
+  }
   
   
   //MARK - Helpers
@@ -64,15 +91,19 @@ class LoginController: UIViewController {
     logoImageView.setDimensions(width: 150, height: 150)
     
     
-    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView])
+    let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView, loginButton])
    
     stack.axis = .vertical
-    stack.spacing = 0
+    stack.spacing = 20
+    stack.distribution = .fillEqually
     
     view.addSubview(stack)
-    stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 16, paddingRight: 32)
+    stack.anchor(top: logoImageView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
     
-
+    view.addSubview(dontHaveAccountButton)
+    dontHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 40, paddingBottom: 16, paddingRight: 40)
+    
   }
+  
   
 }
