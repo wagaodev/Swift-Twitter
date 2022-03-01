@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D773A93527CD952900B0BB2A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773A93427CD952900B0BB2A /* Utilities.swift */; };
 		D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D227CC3A21008CFA58 /* Extensions.swift */; };
 		D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */; };
 		D7A5B3D827CC82A9008CFA58 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D773A93427CD952900B0BB2A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D7A5B3D227CC3A21008CFA58 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A5B3D227CC3A21008CFA58 /* Extensions.swift */,
+				D773A93427CD952900B0BB2A /* Utilities.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				D7E8008027CB40440001565A /* NotificationsController.swift in Sources */,
 				D7E8008227CB405D0001565A /* ConversationsController.swift in Sources */,
+				D773A93527CD952900B0BB2A /* Utilities.swift in Sources */,
 				D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */,
 				D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */,
 				D7E8007E27CB40250001565A /* ExploreController.swift in Sources */,
