@@ -13,6 +13,8 @@ class RegistrationController: UIViewController {
     return button
   }()
   
+  private let imagePicker = UIImagePickerController()
+  
   private lazy var emailContainerView: UIView = {
     let image = #imageLiteral(resourceName: "ic_mail_outline_white_2x-1")
     let view = Utilities().inputContainerView(withImage: image, textField: emailTextField)
@@ -110,7 +112,7 @@ class RegistrationController: UIViewController {
   // MARK - Selectors
   
   @objc func handleAddProfilePhoto(){
-    print("Fotão")
+    present(imagePicker, animated: true, completion: nil)
   }
   
   @objc func handleRegistration(){
@@ -124,12 +126,17 @@ class RegistrationController: UIViewController {
   
   //MARK - Helpers
   func configureUI(){
+
+    imagePicker.delegate = self
+    imagePicker.allowsEditing = true
+    
+
     view.backgroundColor = .twitterBlue
     navigationController?.navigationBar.tintColor = .white
     
     view.addSubview(plusPhotoButton)
     plusPhotoButton.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
-    plusPhotoButton.setDimensions(width: 150, height: 150)
+    plusPhotoButton.setDimensions(width: 128, height: 128)
     
     
     let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView,
@@ -141,14 +148,28 @@ class RegistrationController: UIViewController {
     stack.distribution = .fillEqually
     
     view.addSubview(stack)
-    stack.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingLeft: 32, paddingRight: 32)
+    stack.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor,
+                 paddingTop: 32, paddingLeft: 32, paddingRight: 32)
     
     view.addSubview(alreadyHaveAccountButton)
     alreadyHaveAccountButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor,
                                     right: view.rightAnchor, paddingLeft: 40, paddingBottom: 16, paddingRight: 40)
-    
-    
   }
-  
-  
+}
+
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
+                             info: [UIImagePickerController.InfoKey: Any]) {
+    guard let profileImage = info[.editedImage] as? UIImage else { return }
+    plusPhotoButton.layer.cornerRadius = 128 / 2
+    plusPhotoButton.layer.masksToBounds = true
+    plusPhotoButton.imageView?.contentMode = .scaleAspectFit
+    plusPhotoButton.imageView?.clipsToBounds = true
+    plusPhotoButton.layer.borderWidth = 2
+    plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+    
+    self.plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
+    
+    dismiss(animated: true, completion: nil)
+    }
 }
