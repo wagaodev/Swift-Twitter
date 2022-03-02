@@ -72,19 +72,22 @@ class LoginController: UIViewController {
   // MARK - Selectors
   
   @objc func handleLogin(){
-    print("Handle login here...")
+  
+    print("Lidar com o login")
+    
   }
   
   @objc func handleNavigateToSignUp(){
-    print("Navegação para outra pagina")
+    let controller = RegistrationController()
+    navigationController?.pushViewController(controller, animated: true)
   }
   
   
   //MARK - Helpers
   func configureUI(){
     view.backgroundColor = .twitterBlue
-    navigationController?.navigationBar.tintColor = .black
-    navigationController?.navigationBar.isHidden = false
+    navigationController?.navigationBar.tintColor = .white
+    
     
     view.addSubview(logoImageView)
     logoImageView.centerX(inView: view, topAnchor: view.safeAreaLayoutGuide.topAnchor)
