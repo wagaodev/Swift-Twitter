@@ -53,13 +53,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D7A5B3D427CC7F9C008CFA58 /* New Group */ = {
+		D7A5B3D427CC7F9C008CFA58 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */,
 				D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */,
 			);
-			name = "New Group";
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		D7E8005227CB2F470001565A = {
@@ -116,7 +116,7 @@
 		D7E8007427CB300F0001565A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7A5B3D427CC7F9C008CFA58 /* New Group */,
+				D7A5B3D427CC7F9C008CFA58 /* Authentication */,
 				D7E8007927CB38C50001565A /* MainTabController.swift */,
 				D7E8007B27CB3EB20001565A /* FeedController.swift */,
 				D7E8007D27CB40250001565A /* ExploreController.swift */,
