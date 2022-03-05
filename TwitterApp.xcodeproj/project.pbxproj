@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D70C1C1027D33F5500709CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C0F27D33F5500709CCB /* Constants.swift */; };
+		D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C1127D349AE00709CCB /* AuthService.swift */; };
 		D71E0E0E27CF3EFA002E5865 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71E0E0D27CF3EFA002E5865 /* GoogleService-Info.plist */; };
 		D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D71E0E1027CF3F6C002E5865 /* Algorithms */; };
 		D71E0E1427CF4140002E5865 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D71E0E1327CF4140002E5865 /* FirebaseAnalytics */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		D70C1C0F27D33F5500709CCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D70C1C1127D349AE00709CCB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D71E0E0D27CF3EFA002E5865 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D773A93427CD952900B0BB2A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D7A5B3D227CC3A21008CFA58 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		D7E8007327CB300C0001565A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D70C1C1127D349AE00709CCB /* AuthService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */,
 				D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */,
 				D7E8007E27CB40250001565A /* ExploreController.swift in Sources */,
+				D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */,
 				D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */,
 				D7E8007A27CB38C50001565A /* MainTabController.swift in Sources */,
 				D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */,
