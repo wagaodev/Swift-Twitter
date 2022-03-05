@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 
 class RegistrationController: UIViewController {
   
@@ -14,6 +15,7 @@ class RegistrationController: UIViewController {
   }()
   
   private let imagePicker = UIImagePickerController()
+  private var profileImage: UIImage?
   
   private lazy var emailContainerView: UIView = {
     let image = #imageLiteral(resourceName: "ic_mail_outline_white_2x-1")
@@ -29,12 +31,6 @@ class RegistrationController: UIViewController {
     return view
   }()
   
-  private lazy var passwordConfirmContainerView: UIView = {
-    let image = #imageLiteral(resourceName: "ic_lock_outline_white_2x")
-    let view = Utilities().inputContainerView(withImage: image, textField: passwordConfirmTextField)
-    
-    return view
-  }()
   
   private lazy var fullNameContainerView: UIView = {
     let image = #imageLiteral(resourceName: "ic_person_outline_white_2x")
@@ -62,16 +58,10 @@ class RegistrationController: UIViewController {
     
     return tf
   }()
- 
-  private let passwordConfirmTextField: UITextField = {
-    let tf = Utilities().textField(withPlaceholder: "Password Confirmation")
-    tf.isSecureTextEntry = true
     
-    return tf
-  }()
-  
   private let fullNameTextField: UITextField = {
     let tf = Utilities().textField(withPlaceholder: "Full Name")
+    tf.autocapitalizationType = .words
     
     return tf
   }()
@@ -116,7 +106,30 @@ class RegistrationController: UIViewController {
   }
   
   @objc func handleRegistration(){
-    print("Esse botão fará login")
+    guard let profileImage = profileImage else {
+      print("DEBUG: Please select a profile image...")
+      return
+    }
+ 
+    guard let email = emailTextField.text else { return }
+    guard let password = passwordTextField.text else { return }
+    guard let fullname = fullNameTextField.text else { return }
+    guard let username = usernameTextField.text else { return }
+    
+    Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+      if let error = error {
+        print("DEBUG: ERROR is \(error.localizedDescription)")
+        return
+      }
+      
+      guard let uid = result?.user.uid else { return }
+      
+      let values = ["email": email, "username": username, "fullname": fullname]
+      
+      let ref =  Database.database().reference().child("users").child(uid)
+      
+      ref.updateChildValues(values) { (error, ref) in print("DEBUG: Successfully updated user information")}
+    }
   }
   
   @objc func handleNavigateToLogin(){
@@ -140,7 +153,7 @@ class RegistrationController: UIViewController {
     
     
     let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView,
-                                                  passwordConfirmContainerView, fullNameContainerView,
+                                                  fullNameContainerView,
                                                   usernameContainerView, SignUpButton, alreadyHaveAccountButton])
     
     stack.axis = .vertical
@@ -161,6 +174,8 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo
                              info: [UIImagePickerController.InfoKey: Any]) {
     guard let profileImage = info[.editedImage] as? UIImage else { return }
+    self.profileImage = profileImage
+    
     plusPhotoButton.layer.cornerRadius = 128 / 2
     plusPhotoButton.layer.masksToBounds = true
     plusPhotoButton.imageView?.contentMode = .scaleAspectFit
