@@ -35,7 +35,7 @@ class RegistrationController: UIViewController {
   private lazy var fullNameContainerView: UIView = {
     let image = #imageLiteral(resourceName: "ic_person_outline_white_2x")
     let view = Utilities().inputContainerView(withImage: image, textField: fullNameTextField)
-
+    
     return view
   }()
   
@@ -58,7 +58,7 @@ class RegistrationController: UIViewController {
     
     return tf
   }()
-    
+  
   private let fullNameTextField: UITextField = {
     let tf = Utilities().textField(withPlaceholder: "Full Name")
     tf.autocapitalizationType = .words
@@ -109,28 +109,33 @@ class RegistrationController: UIViewController {
     guard let profileImage = profileImage else {
       print("DEBUG: Please select a profile image...")
       return
-    }
- 
+    } 
+    
     guard let email = emailTextField.text else { return }
     guard let password = passwordTextField.text else { return }
     guard let fullname = fullNameTextField.text else { return }
     guard let username = usernameTextField.text else { return }
     
-    Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-      if let error = error {
-        print("DEBUG: ERROR is \(error.localizedDescription)")
-        return
-      }
+    let credentials = AuthCredentials(email: email,
+                                      password: password,
+                                      fullname: fullname,
+                                      username: username,
+                                      profileImage: profileImage)
+    
+    AuthService.shared.registerUser(credentials: credentials) { (error, ref) in
+      let scenes = UIApplication.shared.connectedScenes
+      let windowScene = scenes.first as? UIWindowScene
+      guard let window = windowScene?.windows.first(where: { $0.isKeyWindow }) else {
+        return }
       
-      guard let uid = result?.user.uid else { return }
+      guard let tab = window.rootViewController as? MainTabController else { return }
       
-      let values = ["email": email, "username": username, "fullname": fullname]
-      
-      let ref =  Database.database().reference().child("users").child(uid)
-      
-      ref.updateChildValues(values) { (error, ref) in print("DEBUG: Successfully updated user information")}
+      tab.authenticateUserAndConfigureUI()
+      self.dismiss(animated: true, completion: nil)
     }
   }
+  
+  
   
   @objc func handleNavigateToLogin(){
     navigationController?.popViewController(animated: true)
@@ -139,11 +144,11 @@ class RegistrationController: UIViewController {
   
   //MARK - Helpers
   func configureUI(){
-
+    
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
     
-
+    
     view.backgroundColor = .twitterBlue
     navigationController?.navigationBar.tintColor = .white
     
@@ -153,8 +158,8 @@ class RegistrationController: UIViewController {
     
     
     let stack = UIStackView(arrangedSubviews: [emailContainerView, passwordContainerView,
-                                                  fullNameContainerView,
-                                                  usernameContainerView, SignUpButton, alreadyHaveAccountButton])
+                                               fullNameContainerView,
+                                               usernameContainerView, SignUpButton, alreadyHaveAccountButton])
     
     stack.axis = .vertical
     stack.spacing = 20
@@ -186,5 +191,5 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     self.plusPhotoButton.setImage(profileImage.withRenderingMode(.alwaysOriginal), for: .normal)
     
     dismiss(animated: true, completion: nil)
-    }
+  }
 }
