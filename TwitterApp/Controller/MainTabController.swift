@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 class MainTabController: UITabBarController {
@@ -24,15 +24,41 @@ class MainTabController: UITabBarController {
     return button
   }()
   
-    // MARK - Lifecycle
+  // MARK - Lifecycle
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+//    logUserOut()
+    view.backgroundColor = .twitterBlue
+    authenticateUserAndConfigureUI()
+    
+    
+  }
+  
+  // MARK - API
+  
+  func authenticateUserAndConfigureUI() {
+    if Auth.auth().currentUser == nil {
+      DispatchQueue.main.async {
+        let nav = UINavigationController(rootViewController: LoginController())
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil )
+      }
+    }else {
       configureViewControllers()
       configureUI()
-      
     }
+  }
+  
+  func logUserOut() {
+    do {
+      try Auth.auth() .signOut()
+      print("DEBUG: Successfully out")
+    }catch let error {
+      print("DEBUG: Failed to sign out with error\(error.localizedDescription)")
+    }
+  }
   
   // MARK - Selectors
   
@@ -52,7 +78,6 @@ class MainTabController: UITabBarController {
   
   func configureViewControllers(){
     
-    
     let feed = FeedController()
     let nav1 = templateNavigationController(image: UIImage(named: "home_unselected"), rootViewController: feed)
     
@@ -64,7 +89,7 @@ class MainTabController: UITabBarController {
     
     let conversations  = ConversationsController()
     let nav4 = templateNavigationController(image: UIImage(named: "ic_mail_outline_white_2x-1"), rootViewController: conversations)
-
+    
     
     viewControllers = [nav1, nav2, nav3, nav4]
     
