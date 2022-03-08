@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97F83B6E65DD3AEB012E451F /* Pods_TwitterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2DACCDCA0F9993E8E948D66 /* Pods_TwitterApp.framework */; };
 		D70C1C1027D33F5500709CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C0F27D33F5500709CCB /* Constants.swift */; };
 		D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C1127D349AE00709CCB /* AuthService.swift */; };
 		D71E0E0E27CF3EFA002E5865 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D71E0E0D27CF3EFA002E5865 /* GoogleService-Info.plist */; };
@@ -37,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59D107245EA5AD677F2F84A1 /* Pods-TwitterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterApp.debug.xcconfig"; path = "Target Support Files/Pods-TwitterApp/Pods-TwitterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		953610469C1DF15D8B3354BD /* Pods-TwitterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterApp.release.xcconfig"; path = "Target Support Files/Pods-TwitterApp/Pods-TwitterApp.release.xcconfig"; sourceTree = "<group>"; };
 		D70C1C0F27D33F5500709CCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D70C1C1127D349AE00709CCB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D71E0E0D27CF3EFA002E5865 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -58,6 +61,7 @@
 		D7E8007D27CB40250001565A /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		D7E8007F27CB40440001565A /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		D7E8008127CB405D0001565A /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		E2DACCDCA0F9993E8E948D66 /* Pods_TwitterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +77,31 @@
 				D71E0E2027CF4140002E5865 /* FirebaseStorage in Frameworks */,
 				D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */,
 				D71E0E1C27CF4140002E5865 /* FirebaseFirestore in Frameworks */,
+				97F83B6E65DD3AEB012E451F /* Pods_TwitterApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A616CCE22F854646C15738C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59D107245EA5AD677F2F84A1 /* Pods-TwitterApp.debug.xcconfig */,
+				953610469C1DF15D8B3354BD /* Pods-TwitterApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A61DD3F262591340235235BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2DACCDCA0F9993E8E948D66 /* Pods_TwitterApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7A5B3D427CC7F9C008CFA58 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +116,8 @@
 			children = (
 				D7E8005D27CB2F470001565A /* TwitterApp */,
 				D7E8005C27CB2F470001565A /* Products */,
+				8A616CCE22F854646C15738C /* Pods */,
+				A61DD3F262591340235235BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,9 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7E8006F27CB2F490001565A /* Build configuration list for PBXNativeTarget "TwitterApp" */;
 			buildPhases = (
+				B1B927B37AEC8E92357275CD /* [CP] Check Pods Manifest.lock */,
 				D7E8005727CB2F470001565A /* Sources */,
 				D7E8005827CB2F470001565A /* Frameworks */,
 				D7E8005927CB2F470001565A /* Resources */,
+				8A60DC32E7CE91B446AFE8C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +260,7 @@
 			);
 			mainGroup = D7E8005227CB2F470001565A;
 			packageReferences = (
-				D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */,
 				D71E0E1227CF4140002E5865 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D7E8005C27CB2F470001565A /* Products */;
@@ -258,6 +285,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8A60DC32E7CE91B446AFE8C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwitterApp/Pods-TwitterApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1B927B37AEC8E92357275CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwitterApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D7E8005727CB2F470001565A /* Sources */ = {
@@ -422,6 +491,7 @@
 		};
 		D7E8007027CB2F490001565A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59D107245EA5AD677F2F84A1 /* Pods-TwitterApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +520,7 @@
 		};
 		D7E8007127CB2F490001565A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 953610469C1DF15D8B3354BD /* Pods-TwitterApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -500,7 +571,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+		D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
 			requirement = {
@@ -521,7 +592,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		D71E0E1027CF3F6C002E5865 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			package = D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */;
 			productName = Algorithms;
 		};
 		D71E0E1327CF4140002E5865 /* FirebaseAnalytics */ = {
