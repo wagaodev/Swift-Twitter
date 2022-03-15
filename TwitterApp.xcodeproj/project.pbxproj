@@ -24,6 +24,7 @@
 		D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D227CC3A21008CFA58 /* Extensions.swift */; };
 		D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */; };
 		D7A5B3D827CC82A9008CFA58 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */; };
+		D7ACFF6127E057CE008CF964 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D7ACFF6027E057CE008CF964 /* SDWebImage */; };
 		D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8005E27CB2F470001565A /* AppDelegate.swift */; };
 		D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8006027CB2F470001565A /* SceneDelegate.swift */; };
 		D7E8006627CB2F470001565A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E8006427CB2F470001565A /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 				D71E0E1827CF4140002E5865 /* FirebaseCrashlytics in Frameworks */,
 				D71E0E1627CF4140002E5865 /* FirebaseAuth in Frameworks */,
 				D71E0E2027CF4140002E5865 /* FirebaseStorage in Frameworks */,
+				D7ACFF6127E057CE008CF964 /* SDWebImage in Frameworks */,
 				D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */,
 				D71E0E1C27CF4140002E5865 /* FirebaseFirestore in Frameworks */,
 			);
@@ -89,6 +91,13 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
+		D7ACFF5F27E057CE008CF964 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7CFC5F627E0547800548E8D /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +112,7 @@
 				D7CFC5F627E0547800548E8D /* Packages */,
 				D7E8005D27CB2F470001565A /* TwitterApp */,
 				D7E8005C27CB2F470001565A /* Products */,
+				D7ACFF5F27E057CE008CF964 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +223,7 @@
 				D71E0E1B27CF4140002E5865 /* FirebaseFirestore */,
 				D71E0E1D27CF4140002E5865 /* FirebaseMessaging */,
 				D71E0E1F27CF4140002E5865 /* FirebaseStorage */,
+				D7ACFF6027E057CE008CF964 /* SDWebImage */,
 			);
 			productName = TwitterApp;
 			productReference = D7E8005B27CB2F470001565A /* TwitterApp.app */;
@@ -568,6 +579,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D71E0E1227CF4140002E5865 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		D7ACFF6027E057CE008CF964 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

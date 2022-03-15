@@ -39,7 +39,9 @@ class MainTabController: UITabBarController {
   // MARK - API
   
   func fetchUser() {
-    UserService.shared.fetchUser()
+    UserService.shared.fetchUser { user in
+      print("DEBUG: Main tab user is \(user.username)")
+    }
   }
   
   func authenticateUserAndConfigureUI() {
