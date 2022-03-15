@@ -42,6 +42,7 @@
 		D7A5B3D227CC3A21008CFA58 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		D7CFC5F727E0547800548E8D /* SDWebImage-5.9.5 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "SDWebImage-5.9.5"; path = "../../../Downloads/SDWebImage-5.9.5"; sourceTree = "<group>"; };
 		D7E8005B27CB2F470001565A /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E8005E27CB2F470001565A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E8006027CB2F470001565A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,9 +85,18 @@
 			name = Authentication;
 			sourceTree = "<group>";
 		};
+		D7CFC5F627E0547800548E8D /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				D7CFC5F727E0547800548E8D /* SDWebImage-5.9.5 */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		D7E8005227CB2F470001565A = {
 			isa = PBXGroup;
 			children = (
+				D7CFC5F627E0547800548E8D /* Packages */,
 				D7E8005D27CB2F470001565A /* TwitterApp */,
 				D7E8005C27CB2F470001565A /* Products */,
 			);
