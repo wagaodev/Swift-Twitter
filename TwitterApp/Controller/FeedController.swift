@@ -38,14 +38,12 @@ class FeedController: UIViewController {
   func configureLeftBarButton() {
     guard let user = user else { return }
     let profileImageView = UIImageView()
-    profileImageView.backgroundColor = .twitterBlue
+
     profileImageView.setDimensions(width: 32, height: 32)
     profileImageView.layer.cornerRadius = 32 / 2
     profileImageView.layer.masksToBounds = true
     
-    guard let profileImageUrl = URL(string: user.profileImageUrl) else { return }
-    
-    profileImageView.sd_setImage(with: profileImageUrl, completed: nil)
+    profileImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
     navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
     
   }
