@@ -49,14 +49,14 @@ class LoginController: UIViewController {
     button.heightAnchor.constraint(equalToConstant: 50).isActive = true
     button.layer.cornerRadius = 8
     button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-    button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+    button.addTarget(LoginController.self, action: #selector(handleLogin), for: .touchUpInside)
     
     return button
   }()
   
   private let dontHaveAccountButton: UIButton = {
     let button = Utilities().atttributedButton("Don't have an account? ", "Sign Up")
-    button.addTarget(self, action: #selector(handleNavigateToSignUp), for: .touchUpInside)
+    button.addTarget(LoginController.self, action: #selector(handleNavigateToSignUp), for: .touchUpInside)
     return button
   }()
   
