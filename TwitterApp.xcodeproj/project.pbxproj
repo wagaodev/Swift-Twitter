@@ -25,10 +25,10 @@
 		D77FBED627E68D170099F283 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FBED527E68D170099F283 /* TweetService.swift */; };
 		D77FBED827E6C0AF0099F283 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FBED727E6C0AF0099F283 /* Tweet.swift */; };
 		D77FBEDA27E736300099F283 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77FBED927E736300099F283 /* TweetCell.swift */; };
+		D7999B1627EAA1B700044F5C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D7999B1527EAA1B700044F5C /* SDWebImage */; };
 		D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D227CC3A21008CFA58 /* Extensions.swift */; };
 		D7A5B3D627CC7FB9008CFA58 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D527CC7FB9008CFA58 /* LoginController.swift */; };
 		D7A5B3D827CC82A9008CFA58 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5B3D727CC82A9008CFA58 /* RegistrationController.swift */; };
-		D7ACFF6127E057CE008CF964 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D7ACFF6027E057CE008CF964 /* SDWebImage */; };
 		D7B5F49B27E65D660036D68F /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B5F49A27E65D660036D68F /* CaptionTextView.swift */; };
 		D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8005E27CB2F470001565A /* AppDelegate.swift */; };
 		D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E8006027CB2F470001565A /* SceneDelegate.swift */; };
@@ -83,7 +83,7 @@
 				D71E0E1827CF4140002E5865 /* FirebaseCrashlytics in Frameworks */,
 				D71E0E1627CF4140002E5865 /* FirebaseAuth in Frameworks */,
 				D71E0E2027CF4140002E5865 /* FirebaseStorage in Frameworks */,
-				D7ACFF6127E057CE008CF964 /* SDWebImage in Frameworks */,
+				D7999B1627EAA1B700044F5C /* SDWebImage in Frameworks */,
 				D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */,
 				D71E0E1C27CF4140002E5865 /* FirebaseFirestore in Frameworks */,
 			);
@@ -238,7 +238,7 @@
 				D71E0E1B27CF4140002E5865 /* FirebaseFirestore */,
 				D71E0E1D27CF4140002E5865 /* FirebaseMessaging */,
 				D71E0E1F27CF4140002E5865 /* FirebaseStorage */,
-				D7ACFF6027E057CE008CF964 /* SDWebImage */,
+				D7999B1527EAA1B700044F5C /* SDWebImage */,
 			);
 			productName = TwitterApp;
 			productReference = D7E8005B27CB2F470001565A /* TwitterApp.app */;
@@ -271,6 +271,7 @@
 			packageReferences = (
 				D71E0E0F27CF3F6C002E5865 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				D71E0E1227CF4140002E5865 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D7999B1427EA9E2F00044F5C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = D7E8005C27CB2F470001565A /* Products */;
 			projectDirPath = "";
@@ -559,6 +560,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		D7999B1427EA9E2F00044F5C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -602,8 +611,9 @@
 			package = D71E0E1227CF4140002E5865 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		D7ACFF6027E057CE008CF964 /* SDWebImage */ = {
+		D7999B1527EAA1B700044F5C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D7999B1427EA9E2F00044F5C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
