@@ -1,10 +1,3 @@
-//
-//  User.swift
-//  TwitterApp
-//
-//  Created by WAGNER GOULART on 06/03/22.
-//
-
 import Firebase
 
 struct User {
