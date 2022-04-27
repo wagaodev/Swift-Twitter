@@ -21,6 +21,7 @@ class ProfileHeader: UICollectionReusableView {
     super.init(frame: frame)
 
     backgroundColor = .red
+    
   }
 
   required init?(coder: NSCoder) {
