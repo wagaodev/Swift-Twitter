@@ -49,6 +49,7 @@ extension ProfileController {
 
     return cell
   }
+
 }
 // MARK: - UICollectionViewDelegate
 
