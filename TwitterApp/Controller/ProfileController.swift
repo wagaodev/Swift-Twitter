@@ -2,6 +2,7 @@
 import UIKit
 
 private let reuseIdentifier = "TweetCell"
+private let headerIdentifier = "ProfileHeader"
 
 class ProfileController: UICollectionViewController {
 
@@ -29,6 +30,8 @@ class ProfileController: UICollectionViewController {
     collectionView.backgroundColor = .white
 
     collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView.register(ProfileHeader.self, forSupplementaryViewOfKind:
+                              UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
   }
 
 }
