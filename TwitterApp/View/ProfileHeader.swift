@@ -55,6 +55,31 @@ class ProfileHeader: UICollectionReusableView {
     return button
   }()
 
+  private let fullnameLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.systemFont(ofSize: 20)
+    label.text = "Cintia Schirmann"
+    return label
+  }()
+
+  private let usernameLabel: UILabel = {
+    let label = UILabel()
+    label.text = "@ruivao"
+    label.font = UIFont.systemFont(ofSize: 14)
+    label.textColor = .lightGray
+    return label
+  }()
+
+  private let bioLabel: UILabel = {
+    let label = UILabel()
+    label.font = UIFont.systemFont(ofSize: 16)
+    label.numberOfLines = 3
+    label.text = "This is a user bio that will span more than one line for test purposes"
+    return label
+  }()
+
+
+
   // MARK: - Lifecycle
 
   override init(frame: CGRect){
@@ -74,8 +99,13 @@ class ProfileHeader: UICollectionReusableView {
     editProfileFollowButton.setDimensions(width: 100, height: 35)
     editProfileFollowButton.layer.cornerRadius = 35 / 2
 
+    let stack = UIStackView(arrangedSubviews: [fullnameLabel, usernameLabel, bioLabel])
+    stack.axis = .vertical
+    stack.distribution = .fillProportionally
+    stack.spacing = 4
 
-    
+    addSubview(stack)
+    stack.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 8)
   }
 
   required init?(coder: NSCoder) {
@@ -87,7 +117,7 @@ class ProfileHeader: UICollectionReusableView {
   // MARK: - Selectors
 
   @objc func handleDismissal(){
-
+//    navigationController?.popViewController(animated: true) 
   }
 
   @objc func handleEditProfileFollow(){
