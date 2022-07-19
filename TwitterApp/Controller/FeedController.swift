@@ -53,7 +53,6 @@ class FeedController: UICollectionViewController {
     imageView.setDimensions(width: 44, height: 44)
     navigationItem.titleView = imageView
     
-    
   }
   
   func configureLeftBarButton() {
@@ -79,10 +78,14 @@ extension FeedController {
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? TweetCell
-
+    cell?.delegate = self
     cell?.tweet = tweets[indexPath.row]
 
     return cell!
+  }
+
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
   }
 }
 
@@ -94,3 +97,11 @@ extension FeedController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: view.frame.width, height: 100)
   }
 }
+
+extension FeedController: TweetCellDelegate {
+  func handleProfileImageTapped() {
+    let controller = ProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+    navigationController?.pushViewController(controller, animated: true)
+  }
+}
+
