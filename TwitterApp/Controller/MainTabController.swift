@@ -49,7 +49,8 @@ class MainTabController: UITabBarController {
   // MARK - API
   
   func fetchUser() {
-    UserService.shared.fetchUser { user in
+    guard let uid = Auth.auth().currentUser?.uid else { return }
+    UserService.shared.fetchUser(uid: uid) { user in
       self.user = user
     }
   }
@@ -120,6 +121,7 @@ class MainTabController: UITabBarController {
     let nav = UINavigationController(rootViewController: rootViewController)
     nav.tabBarItem.image = image
     nav.navigationBar.barTintColor = .white
+
     return nav
   }
   
