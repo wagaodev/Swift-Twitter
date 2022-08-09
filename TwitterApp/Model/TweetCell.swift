@@ -103,7 +103,7 @@ class TweetCell: UICollectionViewCell {
         
         addSubview(actionStack)
         actionStack.centerX(inView: self)
-        actionStack.anchor(bottom: bottomAnchor,  paddingTop: 8, paddingBottom: 8)
+        actionStack.anchor(top: stack.bottomAnchor, bottom: bottomAnchor,  paddingTop: 8, paddingBottom: 8)
         
         
         
