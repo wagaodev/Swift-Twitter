@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB7C8B7928A1DC29000F9038 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */; };
+		AB7C8B7B28A21B9F000F9038 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */; };
 		D70C1C1027D33F5500709CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C0F27D33F5500709CCB /* Constants.swift */; };
 		D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C1127D349AE00709CCB /* AuthService.swift */; };
 		D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D71E0E1027CF3F6C002E5865 /* Algorithms */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		D70C1C0F27D33F5500709CCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D70C1C1127D349AE00709CCB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D721F57A281E430A00232E6C /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D72E072D2817C28300172E6E /* TweetViewModel.swift */,
+				AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				D7E8007E27CB40250001565A /* ExploreController.swift in Sources */,
 				D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */,
 				D721F57D281E590200232E6C /* ProfileFilterCell.swift in Sources */,
+				AB7C8B7B28A21B9F000F9038 /* ProfileHeaderViewModel.swift in Sources */,
 				D764A3A527E4718E00CDEF42 /* UploadTweetController.swift in Sources */,
 				D754E6BC27D56EBA0054DD13 /* User.swift in Sources */,
 				D7E8006127CB2F470001565A /* SceneDelegate.swift in Sources */,
