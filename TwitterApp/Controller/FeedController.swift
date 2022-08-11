@@ -30,6 +30,12 @@ class FeedController: UICollectionViewController {
         fetchTweets()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
     // MARK: - API
     
     func fetchTweets(){
@@ -39,6 +45,7 @@ class FeedController: UICollectionViewController {
     }
     
     // MARK: - Helpers
+    
     
     
     

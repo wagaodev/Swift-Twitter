@@ -127,7 +127,6 @@ class TweetCell: UICollectionViewCell {
     
     @objc func handleProfileImageTapped(){
         delegate?.handleProfileImageTapped(self)
-        
     }
     
     @objc func handleCommentTapped() {
