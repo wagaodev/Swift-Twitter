@@ -33,8 +33,6 @@ class FeedController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.barStyle = .blackTranslucent
-        
     }
     
     // MARK: - API
