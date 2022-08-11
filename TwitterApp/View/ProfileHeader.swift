@@ -169,7 +169,6 @@ class ProfileHeader: UICollectionReusableView {
     
     @objc func handleDismissal(){
         delegate?.handleDismissal()
-        
     }
     
     @objc func handleEditProfileFollow(){
