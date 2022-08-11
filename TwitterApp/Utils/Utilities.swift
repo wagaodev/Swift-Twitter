@@ -42,10 +42,10 @@ class Utilities {
         return tf
     }
     
-    func atttributedButton(_ fristPart: String, _ secondPart: String) -> UIButton {
+    func atttributedButton(_ firstPart: String, _ secondPart: String) -> UIButton {
         let button = UIButton(type: .system)
         
-        let attributedTitle = NSMutableAttributedString(string: fristPart, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+        let attributedTitle = NSMutableAttributedString(string: firstPart, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
                                                                                         NSAttributedString.Key.foregroundColor: UIColor.white])
         
         attributedTitle.append(NSAttributedString(string: secondPart, attributes: [NSMutableAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
@@ -55,4 +55,26 @@ class Utilities {
         
         return button
     }
+    
+        func labelFollowers(_ fristText: String, _ secondText: String) -> UILabel {
+            let label = UILabel()
+    
+            label.text = "\(fristText) \(secondText)"
+            label.isUserInteractionEnabled = true
+            return label
+        }
+//    func atttributedLabels(_ firstPart: String, _ secondPart: String) -> UILabel {
+//        let label = UILabel()
+//        
+//        let attributedTitle = NSMutableAttributedString(string: firstPart, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+//                                                                                        NSAttributedString.Key.foregroundColor: UIColor.white])
+//        
+//        attributedTitle.append(NSAttributedString(string: secondPart, attributes: [NSMutableAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
+//                                                                                   NSMutableAttributedString.Key.foregroundColor: UIColor.white]))
+//        
+//        label.
+//        
+//        return label
+//    }
+    
 }

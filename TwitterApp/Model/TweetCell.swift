@@ -2,7 +2,7 @@
 import UIKit
 
 protocol TweetCellDelegate: AnyObject {
-    func handleProfileImageTapped()
+    func handleProfileImageTapped(_ cell: TweetCell)
 }
 
 class TweetCell: UICollectionViewCell {
@@ -103,7 +103,7 @@ class TweetCell: UICollectionViewCell {
         
         addSubview(actionStack)
         actionStack.centerX(inView: self)
-        actionStack.anchor(bottom: bottomAnchor,  paddingTop: 8, paddingBottom: 8)
+        actionStack.anchor(top: stack.bottomAnchor, bottom: bottomAnchor,  paddingTop: 8, paddingBottom: 8)
         
         
         
@@ -126,8 +126,7 @@ class TweetCell: UICollectionViewCell {
     // MARK: - Selectors
     
     @objc func handleProfileImageTapped(){
-        delegate?.handleProfileImageTapped()
-        
+        delegate?.handleProfileImageTapped(self)
     }
     
     @objc func handleCommentTapped() {

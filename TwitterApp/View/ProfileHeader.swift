@@ -11,9 +11,21 @@ import UIKit
 
 import UIKit
 
+protocol ProfileHeaderDelegate: AnyObject {
+    func handleDismissal()
+}
+
 class ProfileHeader: UICollectionReusableView {
     
     // MARK: - Properties
+    
+    var user: User? {
+        didSet {
+            configure()
+        }
+    }
+    
+    weak var delegate: ProfileHeaderDelegate?
     
     private let filterBar = ProfileFilterView()
     
@@ -80,12 +92,33 @@ class ProfileHeader: UICollectionReusableView {
         return label
     }()
     
+    private let underlineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .twitterBlue
+        return view
+    }()
     
+    private let followingLabel: UILabel = {
+        let label = UILabel()
+        let followTap = UITapGestureRecognizer(target: self, action: #selector(handleFollowersTapped))
+        label.addGestureRecognizer(followTap)
+        return label
+    }()
     
+    private let followersLabel: UILabel = {
+        let label = UILabel()
+        let followTap = UITapGestureRecognizer(target: self, action: #selector(handleFollowingTapped))
+        label.addGestureRecognizer(followTap)
+        return label
+    }()
+    
+ 
     // MARK: - Lifecycle
     
     override init(frame: CGRect){
         super.init(frame: frame)
+        
+        filterBar.delegate = self
         
         addSubview(containerView)
         containerView.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor, height: 108)
@@ -109,8 +142,21 @@ class ProfileHeader: UICollectionReusableView {
         addSubview(stack)
         stack.anchor(top: profileImageView.bottomAnchor, left: leftAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 12, paddingRight: 12)
         
+        let stackFollowers = UIStackView(arrangedSubviews: [followingLabel, followersLabel])
+        stack.axis = .vertical
+        stack.spacing = 4
+        stack.distribution = .fillProportionally
+        
+        
+        addSubview(stackFollowers)
+        stackFollowers.anchor(top: stack.bottomAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 12
+        )
+        
         addSubview(filterBar)
         filterBar.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, height: 50)
+        
+        addSubview(underlineView)
+        underlineView.anchor(top: filterBar.bottomAnchor, width: frame.width / 3, height: 2)
     }
     
     required init?(coder: NSCoder) {
@@ -122,13 +168,43 @@ class ProfileHeader: UICollectionReusableView {
     // MARK: - Selectors
     
     @objc func handleDismissal(){
-        //    navigationController?.popViewController(animated: true) 
+        delegate?.handleDismissal()
     }
     
     @objc func handleEditProfileFollow(){
         print("DEBUG: Following...")
     }
     
+    @objc func handleFollowersTapped(){
+        print("DEBUG: Follower Tapped")
+    }
+    
+    @objc func handleFollowingTapped(){
+        print("DEBUG: Following")
+    }
+    
     // MARK: - Helpers
     
+    func configure(){
+        guard let user = user else { return }
+        let viewModel = ProfileHeaderViewModel(user: user)
+        profileImageView.sd_setImage(with: user.profileImageUrl)
+        editProfileFollowButton.setTitle(viewModel.actionButtonTitle, for: .normal)
+        
+        followingLabel.attributedText = viewModel.followersString
+        followersLabel.attributedText = viewModel.followingString
+    }
+    
+}
+
+// MARK: - ProfileViewDelegate
+extension ProfileHeader: ProfileFilterViewDelegate {
+    func filterView(_ view: ProfileFilterView, didSelect indexPath: IndexPath) {
+        guard let cell = view.collectionView.cellForItem(at: indexPath) as? ProfileFilterCell else { return }
+        
+        let xPosition = cell.frame.origin.x
+        UIView.animate(withDuration: 0.3) {
+            self.underlineView.frame.origin.x = xPosition
+        }
+    }
 }
