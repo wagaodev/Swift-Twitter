@@ -9,7 +9,7 @@ class CaptionTextView: UITextView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
-        label.text = "What's happening?"
+        label.text = "What's happening?"        
         return label
     }()
     
@@ -22,8 +22,8 @@ class CaptionTextView: UITextView {
         backgroundColor = .white
         font = UIFont.systemFont(ofSize: 16)
         
-        isScrollEnabled = false
-        heightAnchor.constraint(equalToConstant: 300).isActive = true
+        isScrollEnabled = true
+        heightAnchor.constraint(equalToConstant: 200).isActive = true
         
         addSubview(placeholderLabel)
         placeholderLabel.anchor(top: topAnchor, left: leftAnchor, paddingTop: 8, paddingLeft: 4)
@@ -42,7 +42,6 @@ class CaptionTextView: UITextView {
     
     @objc func handleTextInputChange(){
         placeholderLabel.isHidden = !text.isEmpty
-        
     }
     
     // MARK: - Helpers

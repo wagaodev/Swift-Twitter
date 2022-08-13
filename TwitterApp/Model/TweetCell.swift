@@ -20,7 +20,7 @@ class TweetCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.setDimensions(width: 48, height: 48)
-        iv.layer.cornerRadius = 48 / 2
+        iv.layer.cornerRadius =  48 / 2
         iv.backgroundColor = .twitterBlue
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
@@ -32,7 +32,6 @@ class TweetCell: UICollectionViewCell {
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Some test caption"
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
@@ -75,24 +74,28 @@ class TweetCell: UICollectionViewCell {
     
     
     private let infoLabel = UILabel()
+    
+    
     // MARK: - Lifecycle
     
     override init(frame: CGRect){
         super.init(frame: frame)
         
         backgroundColor = .white
+        
         addSubview(profileImageView)
         profileImageView.anchor(top: topAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 8)
         
-        let stack = UIStackView(arrangedSubviews: [infoLabel, captionLabel])
-        stack.axis = .vertical
-        stack.distribution = .fillProportionally
-        stack.spacing = 4
+        let captionStack = UIStackView(arrangedSubviews: [infoLabel, captionLabel])
+        captionStack.axis = .vertical
+        captionStack.distribution = .fillProportionally
+        captionStack.spacing = 4
         
-        addSubview(stack)
-        stack.anchor(top: profileImageView.topAnchor, left: profileImageView.rightAnchor, right: rightAnchor, paddingLeft: 12, paddingRight: 12)
+        addSubview(captionStack)
+        captionStack.anchor(top: profileImageView.topAnchor, left: profileImageView.rightAnchor, right: rightAnchor, paddingLeft: 12, paddingRight: 12)
         
-        infoLabel.text = "Cintia Schirmann @ruivao"
+        
+        
         infoLabel.font = UIFont.systemFont(ofSize: 14)
         
         let actionStack = UIStackView(arrangedSubviews: [commentButton, retweetButton,
@@ -103,7 +106,7 @@ class TweetCell: UICollectionViewCell {
         
         addSubview(actionStack)
         actionStack.centerX(inView: self)
-        actionStack.anchor(top: stack.bottomAnchor, bottom: bottomAnchor,  paddingTop: 8, paddingBottom: 8)
+        actionStack.anchor(top: bottomAnchor, bottom: bottomAnchor, paddingTop: 8, paddingBottom: 8)
         
         
         

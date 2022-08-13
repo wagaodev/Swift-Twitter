@@ -34,6 +34,7 @@ class Utilities {
         let tf = UITextField()
         tf.textColor = .white
         tf.autocapitalizationType = .none
+        
         tf.textContentType = .oneTimeCode
         tf.autocorrectionType = .no
         tf.font = UIFont.systemFont(ofSize: 16)
@@ -63,18 +64,5 @@ class Utilities {
             label.isUserInteractionEnabled = true
             return label
         }
-//    func atttributedLabels(_ firstPart: String, _ secondPart: String) -> UILabel {
-//        let label = UILabel()
-//        
-//        let attributedTitle = NSMutableAttributedString(string: firstPart, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
-//                                                                                        NSAttributedString.Key.foregroundColor: UIColor.white])
-//        
-//        attributedTitle.append(NSAttributedString(string: secondPart, attributes: [NSMutableAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16),
-//                                                                                   NSMutableAttributedString.Key.foregroundColor: UIColor.white]))
-//        
-//        label.
-//        
-//        return label
-//    }
     
 }

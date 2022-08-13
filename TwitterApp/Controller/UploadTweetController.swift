@@ -42,6 +42,14 @@ class UploadTweetController: UIViewController {
     
     private let captionTextView = CaptionTextView()
     
+    let numberOfCharacteres: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = #colorLiteral(red: 0.3761813763, green: 0.3627229793, blue: 0.3350707148, alpha: 0.2814905076)
+        label.text = "1/140"
+        return label
+    }()
+    
     
     // MARK: - Lifecycle
     
@@ -100,6 +108,9 @@ class UploadTweetController: UIViewController {
         stack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 16, paddingRight: 16)
         
         profilelImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
+        
+        view.addSubview(numberOfCharacteres)
+        numberOfCharacteres.anchor(top: stack.bottomAnchor)
         
     }
     
