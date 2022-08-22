@@ -9,7 +9,6 @@ import UIKit
 
 class UploadTweetController: UIViewController {
     
-    
     // MARK: - Properties
     
     private let user: User
@@ -42,11 +41,11 @@ class UploadTweetController: UIViewController {
     
     private let captionTextView = CaptionTextView()
     
-    let numberOfCharacteres: UILabel = {
+    private let numberOfCharacteres: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = #colorLiteral(red: 0.3761813763, green: 0.3627229793, blue: 0.3350707148, alpha: 0.2814905076)
-        label.text = "1/140"
+        label.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        label.text = "0/140"
         return label
     }()
     
@@ -110,7 +109,7 @@ class UploadTweetController: UIViewController {
         profilelImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
         
         view.addSubview(numberOfCharacteres)
-        numberOfCharacteres.anchor(top: stack.bottomAnchor)
+        numberOfCharacteres.anchor(top: stack.bottomAnchor, right: view.rightAnchor, paddingTop: 8,paddingRight: 20)
         
     }
     
