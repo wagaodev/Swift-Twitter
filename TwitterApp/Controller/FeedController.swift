@@ -51,6 +51,7 @@ class FeedController: UICollectionViewController {
         view.backgroundColor = .white
         
         collectionView.register(TweetCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
         collectionView.backgroundColor = .white
         
         let imageView = UIImageView(image: UIImage(named: "twitter_logo_blue"))

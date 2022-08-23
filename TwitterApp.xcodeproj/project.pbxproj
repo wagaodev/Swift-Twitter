@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB7C8B7928A1DC29000F9038 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */; };
 		AB7C8B7B28A21B9F000F9038 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */; };
+		AB8FB53D28B48BA7007C1CCF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8FB53C28B48BA7007C1CCF /* UserCell.swift */; };
 		D70C1C1027D33F5500709CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C0F27D33F5500709CCB /* Constants.swift */; };
 		D70C1C1227D349AE00709CCB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C1127D349AE00709CCB /* AuthService.swift */; };
 		D71E0E1127CF3F6C002E5865 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D71E0E1027CF3F6C002E5865 /* Algorithms */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
+		AB8FB53C28B48BA7007C1CCF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D70C1C0F27D33F5500709CCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D70C1C1127D349AE00709CCB /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D721F57A281E430A00232E6C /* ProfileFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFilterView.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				D76205402819CFCF00C6B430 /* ProfileHeader.swift */,
 				D721F57A281E430A00232E6C /* ProfileFilterView.swift */,
 				D721F57C281E590200232E6C /* ProfileFilterCell.swift */,
+				AB8FB53C28B48BA7007C1CCF /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				D7B5F49B27E65D660036D68F /* CaptionTextView.swift in Sources */,
 				D7E8008227CB405D0001565A /* ConversationsController.swift in Sources */,
 				D773A93527CD952900B0BB2A /* Utilities.swift in Sources */,
+				AB8FB53D28B48BA7007C1CCF /* UserCell.swift in Sources */,
 				D7E8005F27CB2F470001565A /* AppDelegate.swift in Sources */,
 				D7A5B3D327CC3A21008CFA58 /* Extensions.swift in Sources */,
 				D7AF1B8328191EFD00E78352 /* ProfileController.swift in Sources */,
