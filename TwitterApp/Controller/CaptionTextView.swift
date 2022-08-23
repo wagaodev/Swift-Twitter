@@ -9,18 +9,7 @@ class CaptionTextView: UITextView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .darkGray
-        label.text = "What's happening?"        
-<<<<<<< HEAD
-=======
-        return label
-    }()
-    
-    let numberOfCharacteres: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = #colorLiteral(red: 0.3761813763, green: 0.3627229793, blue: 0.3350707148, alpha: 0.4507690222)
-        label.text = "1/140"
->>>>>>> develop
+        label.text = "What's happening?"
         return label
     }()
     
