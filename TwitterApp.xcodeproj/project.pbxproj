@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB7C8B7928A1DC29000F9038 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */; };
+		AB05458828B5D76500192407 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB05458728B5D76500192407 /* GoogleService-Info.plist */; };
 		AB7C8B7B28A21B9F000F9038 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */; };
 		AB8FB53D28B48BA7007C1CCF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8FB53C28B48BA7007C1CCF /* UserCell.swift */; };
 		D70C1C1027D33F5500709CCB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70C1C0F27D33F5500709CCB /* Constants.swift */; };
@@ -50,7 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB05458728B5D76500192407 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB7C8B7A28A21B9F000F9038 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		AB8FB53C28B48BA7007C1CCF /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D70C1C0F27D33F5500709CCB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				D7E8006427CB2F470001565A /* Main.storyboard */,
 				D7E8006727CB2F490001565A /* Assets.xcassets */,
 				D7E8006927CB2F490001565A /* LaunchScreen.storyboard */,
-				AB7C8B7828A1DC29000F9038 /* GoogleService-Info.plist */,
+				AB05458728B5D76500192407 /* GoogleService-Info.plist */,
 				D7E8006C27CB2F490001565A /* Info.plist */,
 			);
 			path = TwitterApp;
@@ -309,7 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E8006B27CB2F490001565A /* LaunchScreen.storyboard in Resources */,
-				AB7C8B7928A1DC29000F9038 /* GoogleService-Info.plist in Resources */,
+				AB05458828B5D76500192407 /* GoogleService-Info.plist in Resources */,
 				D7E8006827CB2F490001565A /* Assets.xcassets in Resources */,
 				D7E8006627CB2F470001565A /* Main.storyboard in Resources */,
 			);
